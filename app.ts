@@ -1,10 +1,18 @@
 
-function add(n1:number, n2:number) {
-    return n1 + n2;
+// union types will let you accept more than one type into a variable
+function combine(n1: number | string, n2: number | string) {
+    let result;
+    if (typeof n1 === 'number' && typeof n2 === 'number') {
+        result = n1 + n2;
+    } else {
+        result = n1.toString() + n2.toString();
+    }
+
+    return result;
 }
 
-const number1 = "5";
-const number2 = 11.5;
+const combinedAges = combine(30,39);
+console.log(combinedAges);
 
-const result = add(+number1, +number2);
-console.log(result);
+const combinedNames = combine('John', 'Louise');
+console.log(combinedNames);

@@ -1,7 +1,14 @@
-function add(n1, n2) {
-    return n1 + n2;
+function combine(n1, n2) {
+    var result;
+    if (typeof n1 === 'number' && typeof n2 === 'number') {
+        result = n1 + n2;
+    }
+    else {
+        result = n1.toString() + n2.toString();
+    }
+    return result;
 }
-var number1 = "5";
-var number2 = 11.5;
-var result = add(+number1, +number2);
-console.log(result);
+var combinedAges = combine(30, 39);
+console.log(combinedAges);
+var combinedNames = combine('John', 'Louise');
+console.log(combinedNames);
